@@ -1,6 +1,6 @@
 // @flow
 import { useContext } from 'react';
-import { ContextObject } from './App';
+import { ContextObject } from './context';
 
 export default function ContextConsumer(): string {
     const { isSpecial } = useContext(ContextObject);

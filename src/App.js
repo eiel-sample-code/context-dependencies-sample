@@ -1,13 +1,8 @@
 // @flow
-import React, { createContext } from 'react';
+import React from 'react';
+import { ContextObject } from './context';
 import ContextConsumer from './ContextConsumer';
-
-export type ContextValueType = {
-    isSpecial: boolean;
-}
-
-const defaultValue: ContextValueType = { isSpecial: false };
-export const ContextObject = createContext<ContextValueType>(defaultValue);
+import type { ContextValueType } from "./context";
 
 const contextValue: ContextValueType = { isSpecial: true };
 
