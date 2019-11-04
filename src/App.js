@@ -1,25 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// @flow
+import React, { createContext } from 'react';
+import ContextConsumer from './ContextConsumer';
+
+export type ContextValueType = {
+    isSpecial: boolean;
+}
+
+const defaultValue: ContextValueType = { isSpecial: false };
+export const ContextObject = createContext<ContextValueType>(defaultValue);
+
+const contextValue: ContextValueType = { isSpecial: true };
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <ContextObject.Provider value={contextValue}>
+        <ContextConsumer />
+      </ContextObject.Provider>
   );
 }
 
